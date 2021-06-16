@@ -1,19 +1,26 @@
 const { Model, DataTypes } = require('sequelize');
 
-class User extends Model {
+class user extends Model {
   static init(sequelize) {
     super.init({
+      cpf: DataTypes.STRING,
+      userid: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      uuid: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4
+      },
       name: DataTypes.STRING,
-      email: DataTypes.STRING,
+      createdate: DataTypes.DATE,
     }, {
       sequelize
     })
   }
-
-  static associate(models) {
-    this.hasMany(models.Address, { foreignKey: 'user_id', as: 'addresses' });
-    this.belongsToMany(models.Tech, { foreignKey: 'user_id', through: 'user_techs', as: 'techs' });
-  }
 }
-
-module.exports = User;
+  /*  static associate(models) {
+    this.hasMany(models.Account, { foreignKey: 'userid', as: 'user' });
+  } */
+module.exports = user;

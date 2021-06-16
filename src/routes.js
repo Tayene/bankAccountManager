@@ -1,22 +1,26 @@
 const express = require('express');
 
-const UserController = require('./controllers/UserController');
-const AddressController = require('./controllers/AddressController');
-const TechController = require('./controllers/TechController');
-const ReportController = require('./controllers/ReportController');
+const UserController = require('./controller/userController');
+const AccountController = require('./controller/accountController');
+const BankTransferController = require('./controller/bankTransferController');
+const DepositBankController = require('./controller/bankDepositController'); 
 
 const routes = express.Router();
+ 
+routes.get('/user', UserController.findUser);
+routes.post('/user', UserController.createUser);
+routes.put('/user', UserController.updateUser);
+routes.delete('/user', UserController.deleteUser);
 
-routes.get('/users', UserController.index);
-routes.post('/users', UserController.store);
+routes.get('/user/account', AccountController.findAccountByPk);
+routes.post('/user/account', AccountController.createUserAccount);
+routes.put('/user/account', AccountController.updateUserAccount);
+routes.delete('/user/account', AccountController.deleteUserAccount);
 
-routes.get('/users/:user_id/addresses', AddressController.index);
-routes.post('/users/:user_id/addresses', AddressController.store);
+routes.get('/user/transfer', BankTransferController.findAll);
+routes.get('/user/transfer/findByPk', BankTransferController.findTransferByPk);
+routes.post('/user/transfer', BankTransferController.createTransfer);
 
-routes.get('/users/:user_id/techs', TechController.index);
-routes.post('/users/:user_id/techs', TechController.store);
-routes.delete('/users/:user_id/techs', TechController.delete);
-
-routes.get('/report', ReportController.show);
+routes.post('/user/deposit', DepositBankController.createDeposit);
 
 module.exports = routes;
