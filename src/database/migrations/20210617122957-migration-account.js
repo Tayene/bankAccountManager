@@ -7,13 +7,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        allowNull: false,
-        references: { model: 'bankdeposit', key: 'deposit', model: 'banktransfer', key: 'transfer' }
+        allowNull: false
       },
       userid: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model: 'user', key: 'userID' }
+        allowNull: false
       },
       balance: {
         type: Sequelize.DOUBLE,

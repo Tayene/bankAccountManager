@@ -7,8 +7,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        allowNull: false,
-        references: { model: 'account', key: 'userID' }
+        allowNull: false
       },
       name: {
         type: Sequelize.STRING,

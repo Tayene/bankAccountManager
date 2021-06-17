@@ -25,11 +25,10 @@ class account extends Model {
       updatedAt: false
     })
   }
-
    static associate(models) {
-    //this.belongsTo(models.User, { foreignKey: 'userid', as: 'userID' });
-    this.hasMany(models.bankDeposit, { foreignKey: 'accountid', as: 'account' })
-    //this.hasMany(models.bankTransfer, { foreignKey: 'accountid', as: 'transfer' })
+    this.hasMany(models.user, { foreignKey: 'userid', as: 'userID' });
+    this.hasMany(models.bankdeposit, { foreignKey: 'accountid', as: 'account' })
+    this.hasMany(models.banktransfer, { foreignKey: 'accountid', as: 'transfer' })
   } 
 }
 

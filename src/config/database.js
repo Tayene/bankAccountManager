@@ -3,7 +3,7 @@ module.exports = {
     host: 'localhost',
     username: 'postgres',
     password: '1234',
-    database: 'lportal',
+    database: 'new_db',
     define: {
         timestamps: true,
         createdAt: 'createdate',

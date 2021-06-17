@@ -5,8 +5,7 @@ module.exports = {
     return queryInterface.createTable('bankdeposit', { 
       accountid: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model: 'account', key: 'accountID' }
+        allowNull: false
       },
       accountdestined: {
         type: Sequelize.INTEGER

@@ -69,7 +69,7 @@ module.exports = {
                     agency: Agency,
                     amount: Amount,
                     transferid: transferID,
-                    accountDestined: Destined,
+                    accountdestined: Destined,
                     transactiondate: transactionDate,
                     uuid: uuID,
                     transfertype: transferType,

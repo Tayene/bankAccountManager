@@ -5,8 +5,7 @@ module.exports = {
     return queryInterface.createTable('banktransfer', { 
       accountid: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model: 'account', key: 'accountID' }
+        allowNull: false
       },
       agency: {
         type: Sequelize.INTEGER,
@@ -16,7 +15,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      tranferid:{
+      transferid:{
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,

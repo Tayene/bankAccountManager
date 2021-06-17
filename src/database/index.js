@@ -13,9 +13,5 @@ Account.init(connection);
 Transfer.init(connection);
 Deposit.init(connection);
 
-//User.associate(connection.models);
-//Account.associate(connection.models);
-//Transfer.associate(connection.models);
-//Deposit.init(connection.models);
 
 module.exports = connection;
