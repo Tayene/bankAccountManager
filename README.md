@@ -1,6 +1,6 @@
 # bankAccountManager
 API criada ultilizando a ORM para nodejs SEQUELIZE.
-Para iniciar é necessaário criar uma conexão de banco de dados com o dialeto 'Postgresql', ultilizando as credenciais que contém no arquivo "database.js" na pasta "config", após isso é necessário rodas as migrations do sequelize para serem geradas as tabelas, rodando na ordem os comandos a seguir:
+Para iniciar é necessaário criar uma conexão de banco de dados com o dialeto 'Postgresql', utilizando as credenciais que contém no arquivo "database.js" na pasta "config". Após isso é necessário rodas as migrations do sequelize para serem geradas as tabelas, rodando na ordem os comandos a seguir:
 
   - npx sequelize-cli migration:generate --name migration-user
   - npx sequelize-cli migration:generate --name migration-account
